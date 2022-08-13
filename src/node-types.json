@@ -1,0 +1,55 @@
+[
+  {
+    "type": "source_file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "wikilink",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "wikilink",
+    "named": true,
+    "fields": {
+      "anchor": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "linkanchor",
+            "named": true
+          }
+        ]
+      },
+      "target": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "linktarget",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "[[",
+    "named": false
+  },
+  {
+    "type": "linkanchor",
+    "named": true
+  },
+  {
+    "type": "linktarget",
+    "named": true
+  }
+]

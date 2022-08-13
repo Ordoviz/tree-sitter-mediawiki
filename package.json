@@ -1,0 +1,37 @@
+{
+  "name": "tree-sitter-mediawiki",
+  "version": "0.0.1",
+  "description": "Wikitext parser",
+  "main": "bindings/node",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ordoviz/tree-sitter-mediawiki.git"
+  },
+  "keywords": [
+    "tree-sitter",
+    "parser",
+    "lexer",
+    "ast",
+    "syntax-highlighting"
+  ],
+  "author": "Lennard Hofmann",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ordoviz/tree-sitter-mediawiki/issues"
+  },
+  "homepage": "https://github.com/Ordoviz/tree-sitter-mediawiki#readme",
+  "tree-sitter": [
+    {
+      "file-types": [
+        ".wiki",
+        ".mediawiki"
+      ]
+    }
+  ],
+  "dependencies": {
+    "nan": "^2.16.0"
+  }
+}

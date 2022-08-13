@@ -1,0 +1,81 @@
+{
+  "name": "mediawiki",
+  "rules": {
+    "source_file": {
+      "type": "REPEAT",
+      "content": {
+        "type": "SYMBOL",
+        "name": "_root"
+      }
+    },
+    "_root": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "wikilink"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_plaintext"
+        }
+      ]
+    },
+    "wikilink": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "[["
+        },
+        {
+          "type": "FIELD",
+          "name": "target",
+          "content": {
+            "type": "SYMBOL",
+            "name": "linktarget"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "anchor",
+              "content": {
+                "type": "SYMBOL",
+                "name": "linkanchor"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "PATTERN",
+          "value": "(\\|.*?)?\\]\\]"
+        }
+      ]
+    },
+    "linktarget": {
+      "type": "PATTERN",
+      "value": "[^#|\\]]+"
+    },
+    "linkanchor": {
+      "type": "PATTERN",
+      "value": "#[^|\\]]+"
+    },
+    "_plaintext": {
+      "type": "PATTERN",
+      "value": ".|\\n"
+    }
+  },
+  "extras": [],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": []
+}
+

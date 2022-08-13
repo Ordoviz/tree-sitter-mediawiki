@@ -1,0 +1,35 @@
+==================
+Unpiped wikilink
+==================
+
+This is a [[link]], and [[another]].
+---
+
+(source_file
+   (wikilink
+      (linktarget))
+   (wikilink
+      (linktarget)))
+  
+==================
+Piped wikilink
+==================
+
+This is a piped [[link|displaytext]].
+---
+
+(source_file
+   (wikilink
+      (linktarget)))
+
+==================
+wikilink with anchor
+==================
+
+See [[title#section|section]].
+---
+
+(source_file
+   (wikilink
+      (linktarget)
+      (linkanchor)))
