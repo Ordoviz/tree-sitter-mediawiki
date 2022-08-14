@@ -5,11 +5,11 @@ Unpiped wikilink
 This is a [[link]], and [[another]].
 ---
 
-(source_file
-   (wikilink
-      (linktarget))
-   (wikilink
-      (linktarget)))
+(fragment
+  (wikilink
+     (linktarget))
+  (wikilink
+     (linktarget)))
   
 ==================
 Piped wikilink
@@ -18,9 +18,10 @@ Piped wikilink
 This is a piped [[link|displaytext]].
 ---
 
-(source_file
-   (wikilink
-      (linktarget)))
+(fragment
+  (wikilink
+     (linktarget)
+     (linklabel)))
 
 ==================
 wikilink with anchor
@@ -29,7 +30,8 @@ wikilink with anchor
 See [[title#section|section]].
 ---
 
-(source_file
-   (wikilink
-      (linktarget)
-      (linkanchor)))
+(fragment
+  (wikilink
+     (linktarget)
+     (linkanchor)
+     (linklabel)))

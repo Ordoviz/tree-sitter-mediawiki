@@ -1,0 +1,33 @@
+==================
+Bare link
+==================
+
+[http://example.org]
+---
+
+(fragment
+  (extlink
+    (url)))
+  
+==================
+Bare ending with space
+==================
+
+[http://example.org ]
+---
+
+(fragment
+  (extlink
+    (url)))
+
+==================
+With label
+==================
+
+[http://example.org 123]
+---
+
+(fragment
+  (extlink
+    (url)
+    (extlinklabel)))

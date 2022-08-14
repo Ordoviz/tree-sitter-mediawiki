@@ -1,0 +1,48 @@
+==================
+Bare template
+==================
+
+{{abc}}
+---
+
+(fragment
+  (template
+    (templatename)))
+  
+==================
+Template with unnamed arg
+==================
+
+{{abc|1}}
+---
+
+(fragment
+  (template
+     (templatename)
+     (templateparam)))
+
+==================
+Template with named arg
+==================
+
+{{abc|key=value}}
+---
+
+(fragment
+  (template
+     (templatename)
+     (templateparam)))
+
+==================
+Recursive template
+==================
+
+{{abc| {{de}} }}
+---
+
+(fragment
+  (template
+     (templatename)
+     (templateparam
+       (template
+         (templatename)))))

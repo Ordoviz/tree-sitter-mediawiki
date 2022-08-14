@@ -1,0 +1,34 @@
+==================
+Bare parameter
+==================
+
+{{{1}}}
+---
+
+(fragment
+  (parameter
+    (paramname)))
+  
+==================
+Parameter with default
+==================
+
+{{{1|default}}}
+---
+
+(fragment
+  (parameter
+     (paramname)))
+
+==================
+Recursive parameter
+==================
+
+{{{suppressfields| {{{spf|}}} }}}
+---
+
+(fragment
+  (parameter
+     (paramname)
+     (parameter
+        (paramname))))
