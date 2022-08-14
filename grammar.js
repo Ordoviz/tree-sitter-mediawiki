@@ -81,9 +81,11 @@ module.exports = grammar(HTML, {
     
     templatename: $ => /[^|}]+/, // everything until first "|" or "}" char
     templateparam: $ => seq(
-      optional(field('key', /[^|}]+?=/)),
-      field('value', repeat1($._node))
+      optional(field('key', $.templatekey)),
+      field('value', $.templatevalue)
     ),
+    templatekey: $ => /[^|}]+?=/,
+    templatevalue: $ => repeat1($._node),
 
     paramname: $ => /[^|}]+/, // everything until first "|" or "}" char
     _paramdefault: $ => field('value', repeat1($._node))
