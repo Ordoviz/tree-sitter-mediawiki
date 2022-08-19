@@ -49,6 +49,7 @@ module.exports = grammar(HTML, {
     template: $ => seq(
       '{{',
       field('name', $.templatename),
+      optional(seq(':', $._node)),  // argument for parser functions
       repeat(seq('|', $.templateparam)),
       '}}'
     ),
@@ -79,7 +80,7 @@ module.exports = grammar(HTML, {
     linkanchor: $ => /#[^|\]]+/, // this assumes the anchor contains no "]"
     linklabel:  $ => repeat1(/[^\]]|\][^\]]/),
     
-    templatename: $ => /[^|}]+/, // everything until first "|" or "}" char
+    templatename: $ => /[^|:}]+/, // everything until first "|", ":", or "}" char
     templateparam: $ => seq(
       optional(field('key', $.templatekey)),
       field('value', $.templatevalue)

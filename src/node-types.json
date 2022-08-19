@@ -294,11 +294,6 @@
     }
   },
   {
-    "type": "paramname",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "quoted_attribute_value",
     "named": true,
     "fields": {},
@@ -371,55 +366,103 @@
       "required": false,
       "types": [
         {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "erroneous_end_tag",
+          "named": true
+        },
+        {
+          "type": "extlink",
+          "named": true
+        },
+        {
+          "type": "heading",
+          "named": true
+        },
+        {
+          "type": "parameter",
+          "named": true
+        },
+        {
+          "type": "template",
+          "named": true
+        },
+        {
           "type": "templateparam",
+          "named": true
+        },
+        {
+          "type": "wikilink",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "templatename",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "templateparam",
     "named": true,
     "fields": {
-      "value": {
-        "multiple": true,
+      "key": {
+        "multiple": false,
         "required": false,
         "types": [
           {
-            "type": "element",
+            "type": "templatekey",
             "named": true
-          },
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
           {
-            "type": "erroneous_end_tag",
-            "named": true
-          },
-          {
-            "type": "extlink",
-            "named": true
-          },
-          {
-            "type": "heading",
-            "named": true
-          },
-          {
-            "type": "parameter",
-            "named": true
-          },
-          {
-            "type": "template",
-            "named": true
-          },
-          {
-            "type": "wikilink",
+            "type": "templatevalue",
             "named": true
           }
         ]
       }
+    }
+  },
+  {
+    "type": "templatevalue",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "erroneous_end_tag",
+          "named": true
+        },
+        {
+          "type": "extlink",
+          "named": true
+        },
+        {
+          "type": "heading",
+          "named": true
+        },
+        {
+          "type": "parameter",
+          "named": true
+        },
+        {
+          "type": "template",
+          "named": true
+        },
+        {
+          "type": "wikilink",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -501,6 +544,10 @@
   },
   {
     "type": "/>",
+    "named": false
+  },
+  {
+    "type": ":",
     "named": false
   },
   {
@@ -588,11 +635,23 @@
     "named": true
   },
   {
+    "type": "paramname",
+    "named": true
+  },
+  {
     "type": "raw_text",
     "named": true
   },
   {
     "type": "tag_name",
+    "named": true
+  },
+  {
+    "type": "templatekey",
+    "named": true
+  },
+  {
+    "type": "templatename",
     "named": true
   },
   {

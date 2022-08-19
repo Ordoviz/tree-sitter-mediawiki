@@ -19,7 +19,8 @@ Template with unnamed arg
 (fragment
   (template
      (templatename)
-     (templateparam)))
+     (templateparam
+       (templatevalue))))
 
 ==================
 Template with named arg
@@ -31,7 +32,9 @@ Template with named arg
 (fragment
   (template
      (templatename)
-     (templateparam)))
+     (templateparam
+        (templatekey)
+        (templatevalue))))
 
 ==================
 Recursive template
@@ -44,5 +47,23 @@ Recursive template
   (template
      (templatename)
      (templateparam
-       (template
-         (templatename)))))
+        (templatevalue
+           (template
+              (templatename))))))
+
+==================
+Parser function
+==================
+
+{{#ifeq:{{#time:Y}}|2022|true}}
+---
+
+(fragment
+  (template
+     (templatename)
+     (template
+         (templatename))
+     (templateparam
+        (templatevalue))
+     (templateparam
+        (templatevalue))))
