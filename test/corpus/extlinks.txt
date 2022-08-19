@@ -5,7 +5,7 @@ Bare link
 [http://example.org]
 ---
 
-(fragment
+(source_file
   (extlink
     (url)))
   
@@ -16,7 +16,7 @@ Bare ending with space
 [http://example.org ]
 ---
 
-(fragment
+(source_file
   (extlink
     (url)))
 
@@ -27,7 +27,7 @@ With label
 [http://example.org 123]
 ---
 
-(fragment
+(source_file
   (extlink
     (url)
     (linklabel)))

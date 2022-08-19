@@ -5,7 +5,7 @@ Unpiped wikilink
 This is a [[link]], and [[another]].
 ---
 
-(fragment
+(source_file
   (wikilink
      (linktarget))
   (wikilink
@@ -18,7 +18,7 @@ Piped wikilink
 This is a piped [[link|displaytext]].
 ---
 
-(fragment
+(source_file
   (wikilink
      (linktarget)
      (linklabel)))
@@ -30,7 +30,7 @@ wikilink with anchor
 See [[title#section|section]].
 ---
 
-(fragment
+(source_file
   (wikilink
      (linktarget)
      (linkanchor)
@@ -43,7 +43,7 @@ wikilink with parser function
 [[link{{#time:Y}}]]
 ---
 
-(fragment
+(source_file
   (wikilink
      (linktarget
         (template

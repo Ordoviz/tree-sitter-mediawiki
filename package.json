@@ -32,7 +32,6 @@
     }
   ],
   "dependencies": {
-    "nan": "^2.16.0",
-    "tree-sitter-html": "^0.19.0"
+    "nan": "^2.16.0"
   }
 }

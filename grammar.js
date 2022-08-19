@@ -1,9 +1,11 @@
-const HTML = require('tree-sitter-html/grammar');
-
-module.exports = grammar(HTML, {
+module.exports = grammar({
   name: 'mediawiki',
 
+  extras: $ => [ $.comment ],
+
   rules: {
+    source_file: $ => repeat($._node),
+
     _node: $ => choice(
       $._inlinemarkup,
       $._blockmarkup
@@ -14,13 +16,27 @@ module.exports = grammar(HTML, {
       $.wikilink,
       $.template,
       $.parameter,
-      $.element,
-      $.erroneous_end_tag,
+      $.htmltag,
+      $.htmlentity,
       /.|\n/ // plain text
     ),
     
     _blockmarkup: $ => choice(
       $.heading,
+    ),
+    
+    htmltag: $ => seq(
+      '<',
+      optional('/'),
+      field('name', $.tagname),
+      repeat($._node),
+      '>'
+    ),
+
+    htmlentity: $ => /&(#[0-9]{1,4}|#x[0-9a-fA-F]{1,4}|[a-zA-Z]+);/,
+
+    comment: $ => seq(
+      '<!--', repeat(/.|\n/), '-->'
     ),
 
     extlink: $ => seq(
@@ -49,7 +65,7 @@ module.exports = grammar(HTML, {
     template: $ => seq(
       '{{',
       field('name', $.templatename),
-      optional(seq(':', $._node)),  // argument for parser functions
+      optional(seq(':', repeat1($._node))),  // argument for parser functions
       repeat(seq('|', optional($.templateparam))),
       '}}'
     ),
@@ -70,6 +86,8 @@ module.exports = grammar(HTML, {
     h5: $ => seq('\n=====',  /[^=\n]+/, '====='),
     h6: $ => seq('\n======', /[^=\n]+/, '======'),
     
+    tagname: $ => /[a-zA-Z][\w-]*/,
+
     url: $ => seq(
       /([a-zA-Z0-9.-]+:|\/\/)/, // URI scheme or protocol relative
       /[^\s\]]+/                // all except whitespace and "]"

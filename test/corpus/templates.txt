@@ -5,7 +5,7 @@ Bare template
 {{abc}}
 ---
 
-(fragment
+(source_file
   (template
     (templatename)))
   
@@ -16,7 +16,7 @@ Template with unnamed arg
 {{abc|1}}
 ---
 
-(fragment
+(source_file
   (template
      (templatename)
      (templateparam
@@ -29,7 +29,7 @@ Template with named arg
 {{abc|key=value}}
 ---
 
-(fragment
+(source_file
   (template
      (templatename)
      (templateparam
@@ -43,7 +43,7 @@ Recursive template
 {{abc| {{de}} }}
 ---
 
-(fragment
+(source_file
   (template
      (templatename)
      (templateparam
@@ -58,7 +58,7 @@ Parser function
 {{#ifeq:{{#time:Y}}|2022|true}}
 ---
 
-(fragment
+(source_file
   (template
      (templatename)
      (template

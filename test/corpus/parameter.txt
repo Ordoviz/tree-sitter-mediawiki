@@ -5,7 +5,7 @@ Bare parameter
 {{{1}}}
 ---
 
-(fragment
+(source_file
   (parameter
     (paramname)))
   
@@ -16,7 +16,7 @@ Parameter with default
 {{{1|default}}}
 ---
 
-(fragment
+(source_file
   (parameter
      (paramname)))
 
@@ -27,7 +27,7 @@ Recursive parameter
 {{{suppressfields| {{{spf|}}} }}}
 ---
 
-(fragment
+(source_file
   (parameter
      (paramname)
      (parameter

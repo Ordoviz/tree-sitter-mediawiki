@@ -1,0 +1,31 @@
+==================
+comment
+==================
+
+<!---->
+---
+
+(source_file
+  (comment))
+  
+==================
+comment with link
+==================
+
+<!--[[no link]]
+-->
+---
+
+(source_file
+  (comment))
+
+==================
+tag
+==================
+
+<div>
+---
+
+(source_file
+  (htmltag
+    (tagname)))

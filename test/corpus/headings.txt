@@ -5,7 +5,7 @@ h1
 =Head=
 ---
 
-(fragment
+(source_file
   (heading
     (h1)))
   
@@ -16,7 +16,7 @@ h2
 ==Head==
 ---
 
-(fragment
+(source_file
   (heading
     (h2)))
 
@@ -27,7 +27,7 @@ h6
 ======Head======
 ---
 
-(fragment
+(source_file
   (heading
     (h6)))
 
@@ -38,5 +38,5 @@ left unmatched h2
 ===Head==
 ---
 
-(fragment
+(source_file
   (ERROR))
