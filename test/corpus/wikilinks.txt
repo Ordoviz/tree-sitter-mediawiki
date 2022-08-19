@@ -35,3 +35,16 @@ See [[title#section|section]].
      (linktarget)
      (linkanchor)
      (linklabel)))
+
+==================
+wikilink with parser function
+==================
+
+[[link{{#time:Y}}]]
+---
+
+(fragment
+  (wikilink
+     (linktarget
+        (template
+            (templatename)))))

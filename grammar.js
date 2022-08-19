@@ -75,8 +75,8 @@ module.exports = grammar(HTML, {
       /[^\s\]]+/                // all except whitespace and "]"
     ),
 
-    linktarget: $ => /[^#|\]]+/, // everything until first "#", "|", or "]" char
-    linkanchor: $ => /#[^|\]]+/, // this assumes the anchor contains no "]"
+    linktarget: $ => repeat1($._inlinemarkup),
+    linkanchor: $ => seq('#', repeat1($._inlinemarkup)),
     linklabel:  $ => repeat1($._inlinemarkup),
     
     templatename: $ => /[^|:}]+/, // everything until first "|", ":", or "}" char

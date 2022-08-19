@@ -847,12 +847,27 @@
       ]
     },
     "linktarget": {
-      "type": "PATTERN",
-      "value": "[^#|\\]]+"
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "_inlinemarkup"
+      }
     },
     "linkanchor": {
-      "type": "PATTERN",
-      "value": "#[^|\\]]+"
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "#"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_inlinemarkup"
+          }
+        }
+      ]
     },
     "linklabel": {
       "type": "REPEAT1",
