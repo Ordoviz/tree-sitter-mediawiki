@@ -30,4 +30,4 @@ With label
 (fragment
   (extlink
     (url)
-    (extlinklabel)))
+    (linklabel)))

@@ -495,7 +495,7 @@
                       "name": "label",
                       "content": {
                         "type": "SYMBOL",
-                        "name": "extlinklabel"
+                        "name": "linklabel"
                       }
                     },
                     {
@@ -838,10 +838,6 @@
         }
       ]
     },
-    "extlinklabel": {
-      "type": "PATTERN",
-      "value": "[^\\s\\]]+"
-    },
     "linktarget": {
       "type": "PATTERN",
       "value": "[^#|\\]]+"
@@ -853,8 +849,8 @@
     "linklabel": {
       "type": "REPEAT1",
       "content": {
-        "type": "PATTERN",
-        "value": "[^\\]]|\\][^\\]]"
+        "type": "SYMBOL",
+        "name": "_inlinemarkup"
       }
     },
     "templatename": {

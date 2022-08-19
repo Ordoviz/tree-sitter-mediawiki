@@ -28,7 +28,7 @@ module.exports = grammar(HTML, {
       field('target', $.url),
       optional(seq(
         ' ',
-        optional(field('label', $.extlinklabel))
+        optional(field('label', $.linklabel))
       )),
       ']'
     ),
@@ -74,11 +74,10 @@ module.exports = grammar(HTML, {
       /([a-zA-Z0-9.-]+:|\/\/)/, // URI scheme or protocol relative
       /[^\s\]]+/                // all except whitespace and "]"
     ),
-    extlinklabel: $ => /[^\s\]]+/, // all except whitespace and "]"
 
     linktarget: $ => /[^#|\]]+/, // everything until first "#", "|", or "]" char
     linkanchor: $ => /#[^|\]]+/, // this assumes the anchor contains no "]"
-    linklabel:  $ => repeat1(/[^\]]|\][^\]]/),
+    linklabel:  $ => repeat1($._inlinemarkup),
     
     templatename: $ => /[^|:}]+/, // everything until first "|", ":", or "}" char
     templateparam: $ => seq(

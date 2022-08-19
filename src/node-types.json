@@ -112,7 +112,7 @@
         "required": false,
         "types": [
           {
-            "type": "extlinklabel",
+            "type": "linklabel",
             "named": true
           }
         ]
@@ -128,11 +128,6 @@
         ]
       }
     }
-  },
-  {
-    "type": "extlinklabel",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "fragment",
@@ -241,7 +236,37 @@
   {
     "type": "linklabel",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "erroneous_end_tag",
+          "named": true
+        },
+        {
+          "type": "extlink",
+          "named": true
+        },
+        {
+          "type": "parameter",
+          "named": true
+        },
+        {
+          "type": "template",
+          "named": true
+        },
+        {
+          "type": "wikilink",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "parameter",
