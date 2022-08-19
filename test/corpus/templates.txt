@@ -67,3 +67,20 @@ Parser function
         (templatevalue))
      (templateparam
         (templatevalue))))
+
+============
+Newline in template name
+============
+
+{{no
+template}}
+{{
+	 :yes template}}
+---
+
+(source_file
+  (template
+    (templatename)
+    (MISSING "}}"))
+  (template
+    (templatename)))

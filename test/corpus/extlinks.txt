@@ -31,3 +31,16 @@ With label
   (extlink
     (url)
     (linklabel)))
+
+==================
+With template
+==================
+
+[https://www.wikidata.org/w/index.php?search=&search={{PAGENAMEE}}]
+---
+
+(source_file
+  (extlink
+    (url
+      (template
+         (templatename)))))

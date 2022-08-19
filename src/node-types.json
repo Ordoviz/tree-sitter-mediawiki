@@ -461,7 +461,37 @@
   {
     "type": "url",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "extlink",
+          "named": true
+        },
+        {
+          "type": "htmlentity",
+          "named": true
+        },
+        {
+          "type": "htmltag",
+          "named": true
+        },
+        {
+          "type": "parameter",
+          "named": true
+        },
+        {
+          "type": "template",
+          "named": true
+        },
+        {
+          "type": "wikilink",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "wikilink",

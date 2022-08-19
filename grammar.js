@@ -18,11 +18,12 @@ module.exports = grammar({
       $.parameter,
       $.htmltag,
       $.htmlentity,
-      /.|\n/ // plain text
+      /./
     ),
     
     _blockmarkup: $ => choice(
       $.heading,
+      /.|\n/
     ),
     
     htmltag: $ => seq(
@@ -35,9 +36,7 @@ module.exports = grammar({
 
     htmlentity: $ => /&(#[0-9]{1,4}|#x[0-9a-fA-F]{1,4}|[a-zA-Z]+);/,
 
-    comment: $ => seq(
-      '<!--', repeat(/.|\n/), '-->'
-    ),
+    comment: $ => seq( '<!--', repeat(/.|\n/), '-->' ),
 
     extlink: $ => seq(
       '[',
@@ -90,14 +89,14 @@ module.exports = grammar({
 
     url: $ => seq(
       /([a-zA-Z0-9.-]+:|\/\/)/, // URI scheme or protocol relative
-      /[^\s\]]+/                // all except whitespace and "]"
+      repeat1($._inlinemarkup)
     ),
 
     linktarget: $ => repeat1($._inlinemarkup),
     linkanchor: $ => seq('#', repeat1($._inlinemarkup)),
     linklabel:  $ => repeat1($._inlinemarkup),
     
-    templatename: $ => /[^|:}]+/, // everything until first "|", ":", or "}" char
+    templatename: $ => /[\s:]*[^|\n:<}]+/,
     templateparam: $ => choice(
       field('key', $.templatekey),     // just |key=
       field('value', $.templatevalue), // just |value
