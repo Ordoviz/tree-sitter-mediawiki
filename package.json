@@ -25,9 +25,10 @@
   "homepage": "https://github.com/Ordoviz/tree-sitter-mediawiki#readme",
   "tree-sitter": [
     {
+      "scope": "document.mediawiki",
       "file-types": [
-        ".wiki",
-        ".mediawiki"
+        "wiki",
+        "mediawiki"
       ]
     }
   ],
